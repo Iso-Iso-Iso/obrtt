@@ -1,0 +1,17 @@
+:root {
+  --bg-primary: rgba(255, 240, 240, 1);
+  --bg-secondary: linear-gradient(
+    165.54deg,
+    #141333 -33.39%,
+    #202261 15.89%,
+    #543c97 55.84%,
+    #6939a2 74.96%
+  );
+
+  --bg-picker-button: rgba(234, 238, 247, 1);
+
+  --text-color-primary: rgba(51, 51, 51, 1);
+  --text-color-primary-active: rgba(251, 251, 255, 1);
+
+  --font-size-title: 24px;
+}

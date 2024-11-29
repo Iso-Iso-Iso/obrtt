@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pickerItem {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  background: var(--bg-picker-button);
+  border-radius: 16px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 2px 2px 6px 0px rgba(84, 60, 151, 0.25);
+}
+
+.pickerItemActive {
+  background: var(--bg-secondary);
+  color: var(--text-color-primary-active);
+}

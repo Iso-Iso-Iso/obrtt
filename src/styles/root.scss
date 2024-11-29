@@ -1,0 +1,15 @@
+// Libs
+@import "normalize.css";
+
+// Shared resources
+@import "variables";
+
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+html {
+  font-family: "Open Sans", sans-serif;
+}
