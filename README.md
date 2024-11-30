@@ -1,40 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Test Task
 
-## Getting Started
+Hi! I'm glad to try myself in this taks. Here you can find installation, notes for reviewer, my opition about task.
 
-First, run the development server:
+## Installation
+
+First of all, you need to [install Node.js](https://nodejs.org/en/download/package-manager) if you haven’t done that already.
+
+Then install packages.
+
+```bash
+npm i --force # I'm using latest Next.js version so --force required. See Notes for Reviewer below.
+```
+Then start as usual next app.
+
+Start for dev:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build for prod:
+```bash
+npm run build && npm run start
+```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Open web browser and navigate to first questionnaire page
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+```bash
+http://localhost:3000/questionnaires/test-name/question/1
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Notes for reviewer (Known issues)
 
-## Learn More
+Due to a lack of time, I didn’t fix some issues. However, I want to share my future plans.
 
-To learn more about Next.js, take a look at the following resources:
+- Latest Next.js. I've used the latest version of next which has some peer dependency issues because of React version 19. For production we should downgrade version.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+- Searching approach inside config. I've used arrays as storage of questions/questionnaires but with big amount of data it can cause some performance issues. Under the hood I'm using include and find (because it's a common way to send response from server), but we can re-write structure for better performance using objects with ids. For example {1:Question, 2: Question} and change find complexity from N to const.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Bad styles. I did't style 404 page and index page. Also, for result page I just display content as title and paragraph.
 
-## Deploy on Vercel
+- Alert page depend on previous answer and direct opening can cause unavailability in navigation.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## My opinion about task
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+Thanks. It was an interesting challenge. But I believe we can improve it in some cases.
+
+- getStaticPaths and generateStaticParams are available only in legacy page router. Next recommended to use new app router to handle navigation.
+
+- Question invariants. Some question has strange navigation logic.
