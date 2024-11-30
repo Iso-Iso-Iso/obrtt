@@ -1,335 +1,337 @@
-{
-  "name": "Test name",
-  "slug": "test-name",
-  "firstQuestionsId": "1",
-  "id": "test-questionnaire",
-  "questions": [
-    {
-      "id": "1",
-      "variant": "PICKER",
-      "title": "Select your gender:",
-      "options": [
-        {
-          "label": "Female",
-          "value": "Female",
-          "nextId": "2"
-        },
-        {
-          "label": "Male",
-          "value": "Male",
-          "nextId": "2"
+[
+  {
+    "name": "Test name",
+    "slug": "test-name",
+    "firstQuestionsId": "1",
+    "id": "test-questionnaire",
+    "questions": [
+      {
+        "id": "1",
+        "variant": "PICKER",
+        "title": "Select your gender:",
+        "options": [
+          {
+            "label": "Female",
+            "value": "Female",
+            "nextId": "2"
+          },
+          {
+            "label": "Male",
+            "value": "Male",
+            "nextId": "2"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "variant": "PICKER",
+        "title": "So we can get to know you better, tell us about your relationship status.",
+        "options": [
+          {
+            "label": "Single",
+            "value": "Single",
+            "nextId": "3"
+          },
+          {
+            "label": "In a relationship",
+            "value": "InARelationship",
+            "nextId": "4"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "variant": "PICKER",
+        "title": "Are you a single parent?",
+        "options": [
+          {
+            "label": "Yes",
+            "value": "YES",
+            "nextId": "5"
+          },
+          {
+            "label": "No",
+            "value": "NO",
+            "nextId": "5"
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "variant": "PICKER",
+        "title": "Are you a parent?",
+        "options": [
+          {
+            "label": "Yes",
+            "value": "YES",
+            "nextId": "6"
+          },
+          {
+            "label": "No",
+            "value": "NO",
+            "nextId": "6"
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "variant": "PICKER",
+        "title": "{1} {!children(Who_has_children)} need a slightly different approach to improve their relationship. Which statement best describes you?",
+        "options": [
+          {
+            "label": "I’m very unhappy with how things are going in my relationship",
+            "value": "unhappy",
+            "nextId": "7"
+          },
+          {
+            "label": "I’m unhappy with parts of my relationship, but some things are working well",
+            "value": "medium",
+            "nextId": "7"
+          },
+          {
+            "label": "I’m generally happy in my relationship",
+            "value": "low",
+            "nextId": "7"
+          }
+        ]
+      },
+      {
+        "id": "6",
+        "variant": "PICKER",
+        "title": "Single {1} {!4(Who_has_children)} need a slightly different approach to find their perfect partner. But first, how did you feel in your last relationship?",
+        "options": [
+          {
+            "label": "I was unhappy with low things were going in my relationship",
+            "value": "unhappy",
+            "nextId": "8"
+          },
+          {
+            "label": "I was unhappy with parts of my relationship, but some thing were working",
+            "value": "medium",
+            "nextId": "8"
+          },
+          {
+            "label": "I was generally happy with my relationship",
+            "value": "low",
+            "nextId": "8"
+          },
+          {
+            "label": "I’ve never been in a relationship",
+            "value": "low2",
+            "nextId": "8"
+          }
+        ]
+      },
+      {
+        "id": "7",
+        "variant": "PICKER",
+        "title": "Do you tend to overthink?",
+        "options": [
+          {
+            "label": "Yes",
+            "value": "YES",
+            "nextId": "14"
+          },
+          {
+            "label": "No",
+            "value": "NO",
+            "nextId": "14"
+          }
+        ]
+      },
+      {
+        "id": "8",
+        "variant": "PICKER",
+        "title": "Is your partner an introvert or extrovert?",
+        "options": [
+          {
+            "label": "Introvert",
+            "value": "Introvert",
+            "nextId": "9"
+          },
+          {
+            "label": "Extrovert",
+            "value": "Extrovert",
+            "nextId": "9"
+          },
+          {
+            "label": "A bit of both",
+            "value": "both",
+            "nextId": "9"
+          }
+        ]
+      },
+      {
+        "id": "9",
+        "variant": "PICKER",
+        "title": "What is your partner’s gender?",
+        "options": [
+          {
+            "label": "Female",
+            "value": "Female",
+            "nextId": "10"
+          },
+          {
+            "label": "Male",
+            "value": "Male",
+            "nextId": "10"
+          }
+        ]
+      },
+      {
+        "id": "10",
+        "variant": "PICKER",
+        "title": "Do you agree with the statement below?",
+        "description": "“My partner and I make sex a priority in our relationship”",
+        "options": [
+          {
+            "label": "Strongly agree",
+            "value": "1",
+            "nextId": "11"
+          },
+          {
+            "label": "Agree",
+            "value": "2",
+            "nextId": "11"
+          },
+          {
+            "label": "Neutral",
+            "value": "3",
+            "nextId": "11"
+          },
+          {
+            "label": "Disagee",
+            "value": "4",
+            "nextId": "11"
+          },
+          {
+            "label": "Strongly disagree",
+            "value": "5",
+            "nextId": "11"
+          }
+        ]
+      },
+      {
+        "id": "11",
+        "variant": "PICKER",
+        "title": "When you think about your relationship goals, you feel...?",
+        "description": null,
+        "options": [
+          {
+            "label": "Optimistic! They are totally doable, with some guidance.",
+            "value": "Optimistic",
+            "nextId": "15"
+          },
+          {
+            "label": "Cautious. I’ve struggled before, but I’m hopeful.",
+            "value": "Cautious",
+            "nextId": "15"
+          },
+          {
+            "label": "I’m feeling a little anxious, honestly.",
+            "value": "Anxious",
+            "nextId": "15"
+          }
+        ]
+      },
+      {
+        "id": "12",
+        "variant": "PICKER",
+        "title": "What is most important to you?",
+        "description": null,
+        "options": [
+          {
+            "label": "Success",
+            "value": "Success",
+            "nextId": "15"
+          },
+          {
+            "label": "Romance",
+            "value": "Romance",
+            "nextId": "15"
+          },
+          {
+            "label": "Stability",
+            "value": "Stability",
+            "nextId": "15"
+          },
+          {
+            "label": "Freedom",
+            "value": "Freedom",
+            "nextId": "15"
+          }
+        ]
+      },
+      {
+        "id": "13",
+        "variant": "PICKER",
+        "title": "Is emotional control tricky for you?",
+        "description": null,
+        "options": [
+          {
+            "label": "Yes",
+            "value": "Yes",
+            "nextId": "15"
+          },
+          {
+            "label": "Sometimes",
+            "value": "Sometimes",
+            "nextId": "15"
+          },
+          {
+            "label": "Rarely",
+            "value": "Rarely",
+            "nextId": "15"
+          },
+          {
+            "label": "Not at all",
+            "value": "Not at all",
+            "nextId": "15"
+          }
+        ]
+      },
+      {
+        "id": "14",
+        "variant": "ALERT",
+        "title": "So how does it work?",
+        "description": "We analyze hundreds of data points to create your unique astrological blueprint. This is combined with AI to tailor-make your astrological insights, based on your options. We’re going to change your relationship with astrology.",
+        "options": null,
+        "redirectDependOnQuestion": "7",
+        "redirectMap": {
+          "YES": "12",
+          "NO": "13"
         }
-      ]
-    },
-    {
-      "id": "2",
-      "variant": "PICKER",
-      "title": "So we can get to know you better, tell us about your relationship status.",
-      "options": [
-        {
-          "label": "Single",
-          "value": "Single",
-          "nextId": "3"
-        },
-        {
-          "label": "In a relationship",
-          "value": "InARelationship",
-          "nextId": "4"
-        }
-      ]
-    },
-    {
-      "id": "3",
-      "variant": "PICKER",
-      "title": "Are you a single parent?",
-      "options": [
-        {
-          "label": "Yes",
-          "value": "YES",
-          "nextId": "5"
-        },
-        {
-          "label": "No",
-          "value": "NO",
-          "nextId": "5"
-        }
-      ]
-    },
-    {
-      "id": "4",
-      "variant": "PICKER",
-      "title": "Are you a parent?",
-      "options": [
-        {
-          "label": "Yes",
-          "value": "YES",
-          "nextId": "6"
-        },
-        {
-          "label": "No",
-          "value": "NO",
-          "nextId": "6"
-        }
-      ]
-    },
-    {
-      "id": "5",
-      "variant": "PICKER",
-      "title": "{1} {!children(Who_has_children)} need a slightly different approach to improve their relationship. Which statement best describes you?",
-      "options": [
-        {
-          "label": "I’m very unhappy with how things are going in my relationship",
-          "value": "unhappy",
-          "nextId": "7"
-        },
-        {
-          "label": "I’m unhappy with parts of my relationship, but some things are working well",
-          "value": "medium",
-          "nextId": "7"
-        },
-        {
-          "label": "I’m generally happy in my relationship",
-          "value": "low",
-          "nextId": "7"
-        }
-      ]
-    },
-    {
-      "id": "6",
-      "variant": "PICKER",
-      "title": "Single {1} {!4(Who_has_children)} need a slightly different approach to find their perfect partner. But first, how did you feel in your last relationship?",
-      "options": [
-        {
-          "label": "I was unhappy with low things were going in my relationship",
-          "value": "unhappy",
-          "nextId": "8"
-        },
-        {
-          "label": "I was unhappy with parts of my relationship, but some thing were working",
-          "value": "medium",
-          "nextId": "8"
-        },
-        {
-          "label": "I was generally happy with my relationship",
-          "value": "low",
-          "nextId": "8"
-        },
-        {
-          "label": "I’ve never been in a relationship",
-          "value": "low2",
-          "nextId": "8"
-        }
-      ]
-    },
-    {
-      "id": "7",
-      "variant": "PICKER",
-      "title": "Do you tend to overthink?",
-      "options": [
-        {
-          "label": "Yes",
-          "value": "YES",
-          "nextId": "14"
-        },
-        {
-          "label": "No",
-          "value": "NO",
-          "nextId": "14"
-        }
-      ]
-    },
-    {
-      "id": "8",
-      "variant": "PICKER",
-      "title": "Is your partner an introvert or extrovert?",
-      "options": [
-        {
-          "label": "Introvert",
-          "value": "Introvert",
-          "nextId": "9"
-        },
-        {
-          "label": "Extrovert",
-          "value": "Extrovert",
-          "nextId": "9"
-        },
-        {
-          "label": "A bit of both",
-          "value": "both",
-          "nextId": "9"
-        }
-      ]
-    },
-    {
-      "id": "9",
-      "variant": "PICKER",
-      "title": "What is your partner’s gender?",
-      "options": [
-        {
-          "label": "Female",
-          "value": "Female",
-          "nextId": "10"
-        },
-        {
-          "label": "Male",
-          "value": "Male",
-          "nextId": "10"
-        }
-      ]
-    },
-    {
-      "id": "10",
-      "variant": "PICKER",
-      "title": "Do you agree with the statement below?",
-      "description": "“My partner and I make sex a priority in our relationship”",
-      "options": [
-        {
-          "label": "Strongly agree",
-          "value": "1",
-          "nextId": "11"
-        },
-        {
-          "label": "Agree",
-          "value": "2",
-          "nextId": "11"
-        },
-        {
-          "label": "Neutral",
-          "value": "3",
-          "nextId": "11"
-        },
-        {
-          "label": "Disagee",
-          "value": "4",
-          "nextId": "11"
-        },
-        {
-          "label": "Strongly disagree",
-          "value": "5",
-          "nextId": "11"
-        }
-      ]
-    },
-    {
-      "id": "11",
-      "variant": "PICKER",
-      "title": "When you think about your relationship goals, you feel...?",
-      "description": null,
-      "options": [
-        {
-          "label": "Optimistic! They are totally doable, with some guidance.",
-          "value": "Optimistic",
-          "nextId": "15"
-        },
-        {
-          "label": "Cautious. I’ve struggled before, but I’m hopeful.",
-          "value": "Cautious",
-          "nextId": "15"
-        },
-        {
-          "label": "I’m feeling a little anxious, honestly.",
-          "value": "Anxious",
-          "nextId": "15"
-        }
-      ]
-    },
-    {
-      "id": "12",
-      "variant": "PICKER",
-      "title": "What is most important to you?",
-      "description": null,
-      "options": [
-        {
-          "label": "Success",
-          "value": "Success",
-          "nextId": "15"
-        },
-        {
-          "label": "Romance",
-          "value": "Romance",
-          "nextId": "15"
-        },
-        {
-          "label": "Stability",
-          "value": "Stability",
-          "nextId": "15"
-        },
-        {
-          "label": "Freedom",
-          "value": "Freedom",
-          "nextId": "15"
-        }
-      ]
-    },
-    {
-      "id": "13",
-      "variant": "PICKER",
-      "title": "Is emotional control tricky for you?",
-      "description": null,
-      "options": [
-        {
-          "label": "Yes",
-          "value": "Yes",
-          "nextId": "15"
-        },
-        {
-          "label": "Sometimes",
-          "value": "Sometimes",
-          "nextId": "15"
-        },
-        {
-          "label": "Rarely",
-          "value": "Rarely",
-          "nextId": "15"
-        },
-        {
-          "label": "Not at all",
-          "value": "Not at all",
-          "nextId": "15"
-        }
-      ]
-    },
-    {
-      "id": "14",
-      "variant": "ALERT",
-      "title": "So how does it work?",
-      "description": "We analyze hundreds of data points to create your unique astrological blueprint. This is combined with AI to tailor-make your astrological insights, based on your options. We’re going to change your relationship with astrology.",
-      "options": null,
-      "redirectDependOnQuestion": "7",
-      "redirectMap": {
-        "YES": "12",
-        "NO": "13"
+      },
+      {
+        "id": "15",
+        "variant": "PICKER",
+        "title": "Where did you hear about us?",
+        "description": null,
+        "options": [
+          {
+            "label": "Poster or Billboard",
+            "value": "Poster",
+            "nextId": "16"
+          },
+          {
+            "label": "Friend or Family",
+            "value": "Friend",
+            "nextId": "16"
+          },
+          {
+            "label": "Instagram",
+            "value": "Instagram",
+            "nextId": "16"
+          }
+        ]
+      },
+      {
+        "id": "16",
+        "variant": "RESULTS",
+        "title": "Your results",
+        "description": null,
+        "options": []
       }
-    },
-    {
-      "id": "15",
-      "variant": "PICKER",
-      "title": "Where did you hear about us?",
-      "description": null,
-      "options": [
-        {
-          "label": "Poster or Billboard",
-          "value": "Poster",
-          "nextId": "16"
-        },
-        {
-          "label": "Friend or Family",
-          "value": "Friend",
-          "nextId": "16"
-        },
-        {
-          "label": "Instagram",
-          "value": "Instagram",
-          "nextId": "16"
-        }
-      ]
-    },
-    {
-      "id": "16",
-      "variant": "RESULTS",
-      "title": "Your results",
-      "description": null,
-      "options": []
-    }
-  ]
-}
+    ]
+  }
+]

@@ -1,15 +1,29 @@
 import config from "./questionnaire.json";
 import {
   Config,
+  ConfigSlug,
   QuestionId,
   QuestionOption,
   QuestionValue,
 } from "@/config/types";
 
-export const getQuestionnaireConfig = (): Config => config as Config;
+export const getQuestionnaireConfig = (): Config[] => config as Config[];
 
-export const getQuestionByParams = ({ id }: { id: QuestionId }) => {
-  return getQuestionnaireConfig().questions.find((item) => item.id === id);
+export const getQuestionnaireBySlug = ({
+  slug,
+}: {
+  slug: ConfigSlug;
+}): Config | undefined =>
+  getQuestionnaireConfig().find((item) => item.slug === slug);
+
+export const getQuestionByParams = ({
+  id,
+  questionnaire,
+}: {
+  id: QuestionId;
+  questionnaire: Config;
+}) => {
+  return questionnaire.questions.find((item) => item.id === id);
 };
 
 export const getAnswerByParams = ({
@@ -18,5 +32,4 @@ export const getAnswerByParams = ({
 }: {
   options: QuestionOption[];
   value: QuestionValue;
-}): QuestionOption | undefined =>
-  options.find((option) => option.value === value);
+}) => options.find((option) => option.value === value);

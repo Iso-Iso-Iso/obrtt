@@ -1,16 +1,27 @@
 import React, { FC } from "react";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
-import { getQuestionByParams, getQuestionnaireConfig } from "@/config/helpers";
+import {
+  getQuestionByParams,
+  getQuestionnaireBySlug,
+  getQuestionnaireConfig,
+} from "@/config/helpers";
 import { COMPONENT_RENDERER_MAP } from "@/config/constants";
 import QuestionnaireLayout, {
   QuestionnaireLayoutVariant,
 } from "@/components/QuestionnaireLayout/QuestionnaireLayout";
-import { Question, QuestionId, QuestionVariant } from "@/config/types";
+import {
+  ConfigSlug,
+  Question,
+  QuestionId,
+  QuestionVariant,
+} from "@/config/types";
 
 const getStaticPathForQuestionnaires = () =>
-  getQuestionnaireConfig().questions.map((item) => ({
-    params: { slug: getQuestionnaireConfig().slug, id: item.id },
-  }));
+  getQuestionnaireConfig().flatMap((questionnaire) => {
+    return questionnaire.questions.map((item) => ({
+      params: { slug: questionnaire.slug, id: item.id },
+    }));
+  });
 
 export const getStaticPaths = (async () => {
   return {
@@ -19,7 +30,7 @@ export const getStaticPaths = (async () => {
   };
 }) satisfies GetStaticPaths;
 
-type StaticParams = { id: QuestionId };
+type StaticParams = { id: QuestionId; slug: ConfigSlug };
 type StaticProps = {
   question: Question;
 };
@@ -32,7 +43,13 @@ export const getStaticProps: GetStaticProps<
     return { notFound: true };
   }
 
-  const question = getQuestionByParams({ id: params.id });
+  const questionnaire = getQuestionnaireBySlug({ slug: params.slug });
+
+  if (!questionnaire) {
+    return { notFound: true };
+  }
+
+  const question = getQuestionByParams({ id: params.id, questionnaire });
 
   if (!question) {
     return { notFound: true };
