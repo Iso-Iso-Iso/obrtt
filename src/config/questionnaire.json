@@ -322,6 +322,71 @@
             "label": "Instagram",
             "value": "Instagram",
             "nextId": "16"
+          },
+          {
+            "label": "Direct Mail or Package Insert",
+            "value": "DirectMailRrPackageInsert",
+            "nextId": "16"
+          },
+          {
+            "label": "Online TV or Streaming TV",
+            "value": "OnlineTVOrStreamingTV",
+            "nextId": "16"
+          },
+          {
+            "label": "TV",
+            "value": "TV",
+            "nextId": "16"
+          },
+          {
+            "label": "Radio",
+            "value": "Radio",
+            "nextId": "16"
+          },
+          {
+            "label": "Search Engine (Google, Bing, etc.)",
+            "value": "SearchEngine",
+            "nextId": "16"
+          },
+          {
+            "label": "Newspaper or Magazine",
+            "value": "NewspaperOrMagazine",
+            "nextId": "16"
+          },
+          {
+            "label": "Facebook",
+            "value": "Facebook",
+            "nextId": "16"
+          },
+          {
+            "label": "Blog Post or Website Review",
+            "value": "BlogPostOrWebsiteReview",
+            "nextId": "16"
+          },
+          {
+            "label": "Podcast",
+            "value": "Podcast",
+            "nextId": "16"
+          },
+          {
+            "label": "Influencer",
+            "value": "Influencer",
+            "nextId": "16"
+          },
+          {
+            "label": "Youtube",
+            "value": "Youtube",
+            "nextId": "16"
+          },
+          {
+            "label": "Pinterest",
+            "value": "Pinterest",
+            "nextId": "16"
+          },
+          {
+            "label": "Other",
+            "value": "Other",
+            "nextId": "16"
           }
         ]
       },
