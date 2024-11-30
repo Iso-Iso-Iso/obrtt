@@ -1,5 +1,4 @@
 import type { AppProps } from "next/app";
-import QuestionnaireLayout from "@/components/QuestionnaireLayout/QuestionnaireLayout";
 import "@/styles/root.scss";
 import { Provider } from "react-redux";
 import { store } from "@/store/store";

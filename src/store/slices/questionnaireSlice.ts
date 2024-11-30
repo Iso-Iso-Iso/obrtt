@@ -26,7 +26,7 @@ export const questionnaireSlice = createSlice<
   name: QUESTIONNAIRE_SLICE_NAME,
   initialState,
   reducers: {
-    setAnswer: ({ answers }, { payload }) => {
+    setQuestionnaireAnswer: ({ answers }, { payload }) => {
       answers[payload.id] = payload.value;
     },
   },
@@ -35,6 +35,6 @@ export const questionnaireSlice = createSlice<
   },
 });
 
-export const { setAnswer } = questionnaireSlice.actions;
+export const { setQuestionnaireAnswer } = questionnaireSlice.actions;
 
 export const { selectQuestionnaireAnswers } = questionnaireSlice.selectors;

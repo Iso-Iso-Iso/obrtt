@@ -1,3 +1,3 @@
 export default function Home() {
-  return <>aboba</>;
+  return <>Index</>;
 }
