@@ -7,6 +7,7 @@ import {
 } from "@/config/helpers";
 import { selectQuestionnaireAnswers } from "@/store/slices/questionnaireSlice";
 import { useParams } from "next/navigation";
+import { parseStringWithVars } from "@/helpers/parseStringWithVars";
 
 const Results: FC = () => {
   const answers = useAppSelector(selectQuestionnaireAnswers);
@@ -39,7 +40,7 @@ const Results: FC = () => {
       return "";
     }
 
-    return `${question.title} - ${answer.label}`;
+    return `${parseStringWithVars(question.title, answers)} - ${answer.label}`;
   });
 
   return (
