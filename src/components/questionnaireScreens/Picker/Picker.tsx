@@ -27,6 +27,9 @@ export const Picker: FC<OptionsProps> = ({ question }) => {
   return (
     <>
       <ParsableTitle text={question.title} />
+      {question.description && (
+        <p className={styles.description}>{question.description}</p>
+      )}
       <div className={styles.wrapper}>
         {question.options.map((item) => (
           <button
