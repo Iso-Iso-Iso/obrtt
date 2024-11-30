@@ -1,9 +1,13 @@
-import { createSlice, SliceCaseReducers } from "@reduxjs/toolkit";
-import { QuestionValue } from "@/config/types";
+import {
+  createSlice,
+  PayloadAction,
+  SliceCaseReducers,
+} from "@reduxjs/toolkit";
+import { QuestionId, QuestionValue } from "@/config/types";
 
 export const QUESTIONNAIRE_SLICE_NAME = "questionnaire" as const;
 
-export type Answers = Record<number, QuestionValue>;
+export type Answers = Record<QuestionId, QuestionValue>;
 
 type SliceState = {
   answers: Answers;
@@ -26,10 +30,16 @@ export const questionnaireSlice = createSlice<
   name: QUESTIONNAIRE_SLICE_NAME,
   initialState,
   reducers: {
-    setQuestionnaireAnswer: ({ answers }, { payload }) => {
+    setQuestionnaireAnswer: (
+      { answers },
+      { payload }: PayloadAction<{ id: QuestionId; value: QuestionValue }>,
+    ) => {
       answers[payload.id] = payload.value;
     },
-    deleteQuestionnaireAnswer: (state, { payload }) => {
+    deleteQuestionnaireAnswer: (
+      state,
+      { payload }: PayloadAction<{ id: QuestionId }>,
+    ) => {
       state.answers = Object.fromEntries(
         Object.entries(state.answers).filter(([key]) => payload.id !== key),
       );
@@ -40,6 +50,7 @@ export const questionnaireSlice = createSlice<
   },
 });
 
-export const { setQuestionnaireAnswer, deleteQuestionnaireAnswer } = questionnaireSlice.actions;
+export const { setQuestionnaireAnswer, deleteQuestionnaireAnswer } =
+  questionnaireSlice.actions;
 
 export const { selectQuestionnaireAnswers } = questionnaireSlice.selectors;
