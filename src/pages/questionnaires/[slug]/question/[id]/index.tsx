@@ -33,6 +33,7 @@ export const getStaticPaths = (async () => {
 type StaticParams = { id: QuestionId; slug: ConfigSlug };
 type StaticProps = {
   question: Question;
+  slug: ConfigSlug;
 };
 
 export const getStaticProps: GetStaticProps<
@@ -55,7 +56,7 @@ export const getStaticProps: GetStaticProps<
     return { notFound: true };
   }
 
-  return { props: { question } };
+  return { props: { question, slug: params.slug } };
 };
 
 const questionMap: Record<QuestionVariant, QuestionnaireLayoutVariant> = {
@@ -66,6 +67,7 @@ const questionMap: Record<QuestionVariant, QuestionnaireLayoutVariant> = {
 
 const Index: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
   question,
+  slug,
 }) => {
   const Renderer = COMPONENT_RENDERER_MAP[question?.variant];
 
@@ -76,7 +78,11 @@ const Index: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
   }
 
   return (
-    <QuestionnaireLayout variant={layoutVariant}>
+    <QuestionnaireLayout
+      variant={layoutVariant}
+      slug={slug}
+      questionId={question.id}
+    >
       <Renderer question={question} />
     </QuestionnaireLayout>
   );

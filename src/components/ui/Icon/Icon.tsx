@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import Image from "next/image";
 import ChevronSvg from "@/assets/Chevron.svg";
 import LogoSvg from "@/assets/logo.svg";
 import styles from "./icon.module.scss";

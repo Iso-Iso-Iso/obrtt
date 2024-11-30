@@ -29,12 +29,17 @@ export const questionnaireSlice = createSlice<
     setQuestionnaireAnswer: ({ answers }, { payload }) => {
       answers[payload.id] = payload.value;
     },
+    deleteQuestionnaireAnswer: (state, { payload }) => {
+      state.answers = Object.fromEntries(
+        Object.entries(state.answers).filter(([key]) => payload.id !== key),
+      );
+    },
   },
   selectors: {
     selectQuestionnaireAnswers: (state) => state.answers,
   },
 });
 
-export const { setQuestionnaireAnswer } = questionnaireSlice.actions;
+export const { setQuestionnaireAnswer, deleteQuestionnaireAnswer } = questionnaireSlice.actions;
 
 export const { selectQuestionnaireAnswers } = questionnaireSlice.selectors;
