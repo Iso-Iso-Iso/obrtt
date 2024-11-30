@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, Fragment } from "react";
 import { useAppSelector } from "@/store/store";
 import {
   getAnswerByParams,
@@ -14,39 +14,47 @@ const Results: FC = () => {
 
   const params = useParams();
 
-  const results = Object.entries(answers).map(([id, value]) => {
-    if (!params.slug || Array.isArray(params.slug)) {
-      return "";
-    }
+  const results = Object.entries(answers)
+    .map(([id, value]) => {
+      if (!params.slug || Array.isArray(params.slug)) {
+        return null;
+      }
 
-    const questionnaire = getQuestionnaireBySlug({ slug: params.slug });
+      const questionnaire = getQuestionnaireBySlug({ slug: params.slug });
 
-    if (!questionnaire) {
-      return "";
-    }
+      if (!questionnaire) {
+        return null;
+      }
 
-    const question = getQuestionByParams({ id, questionnaire });
+      const question = getQuestionByParams({ id, questionnaire });
 
-    if (!question || !question?.options) {
-      return "";
-    }
+      if (!question || !question?.options) {
+        return null;
+      }
 
-    const answer = getAnswerByParams({
-      value,
-      options: question.options,
-    });
+      const answer = getAnswerByParams({
+        value,
+        options: question.options,
+      });
 
-    if (!answer) {
-      return "";
-    }
+      if (!answer) {
+        return null;
+      }
 
-    return `${parseStringWithVars(question.title, answers)} - ${answer.label}`;
-  });
+      return {
+        questionText: parseStringWithVars(question.title, answers),
+        answerText: answer.label,
+      };
+    })
+    .filter((item) => !!item);
 
   return (
     <div>
       {results.map((item) => (
-        <p key={item}>{item}</p>
+        <Fragment key={item.questionText}>
+          <h3>{item.questionText}</h3>
+          <p>{item.answerText}</p>
+        </Fragment>
       ))}
     </div>
   );
